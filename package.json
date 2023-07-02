@@ -1,12 +1,15 @@
 {
-  "name": "Shrimpo",
+  "name": "shrimpo",
   "version": "1.0.0",
   "description": "Shrimpo - Easily make AI chatbots. Powered by NLU. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "chatbot"
+  ],
   "author": "Aleksander Wegrzyn",
   "license": "ISC",
   "dependencies": {
