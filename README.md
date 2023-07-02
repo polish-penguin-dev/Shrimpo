@@ -1,0 +1,3 @@
+# Shrimpo🍤
+
+working on docs
