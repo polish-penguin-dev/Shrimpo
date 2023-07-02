@@ -1,13 +1,13 @@
 {
-  "name": "nodejs",
+  "name": "Shrimpo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shrimpo - Easily make AI chatbots. Powered by NLU. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aleksander Wegrzyn",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",

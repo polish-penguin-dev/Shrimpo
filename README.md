@@ -39,3 +39,9 @@ Now just simply ask it something!
 ```js
 console.log(ai.ask("Hi!"));
 ```
+
+This makes for an easy, and pretty good chatbot! But wait! We can do even more!
+
+## Learning Mode
+
+Coming soon!
