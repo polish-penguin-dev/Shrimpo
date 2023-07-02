@@ -24,7 +24,7 @@ class Shrimpo {
 	}
 
 	ask(prompt) {
-		const promptLowercase = prompt.toLowerCase();
+		var promptLowercase = prompt.toLowerCase();
 		let closestMatch = null;
 		let highestScore = 0;
 
