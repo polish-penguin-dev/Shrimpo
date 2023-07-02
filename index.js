@@ -16,10 +16,10 @@ class Shrimpo {
 		this.trainingData = {};
 	}
 
-	train(intent, trainingphrases, trainingresponses) {
+	train(intent, trainingPhrases, trainingResponses) {
 		this.trainingData[intent] = {
-			trainingphrases: trainingphrases.map(phrase => phrase.toLowerCase()),
-			trainingresponses
+			trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
+			trainingResponses
 		};
 	}
 
@@ -29,7 +29,7 @@ class Shrimpo {
 		let highestScore = 0;
 
 		for (const intent in this.trainingData) {
-			const trainingPhrases = this.trainingData[intent].trainingphrases;
+			const trainingPhrases = this.trainingData[intent].trainingPhrases;
 
 			const { bestMatch } = stringSimilarity.findBestMatch(promptLowercase, trainingPhrases);
 
@@ -41,7 +41,7 @@ class Shrimpo {
 
 		
 		if (closestMatch) {
-			const trainingResponses = this.trainingData[closestMatch].trainingresponses;
+			const trainingResponses = this.trainingData[closestMatch].trainingResponses;
 			const randomResponse =
 			trainingResponses[Math.floor(Math.random() * trainingResponses.length)];
 			return randomResponse;
