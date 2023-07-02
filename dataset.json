@@ -1,0 +1,6 @@
+{
+  "Greetings": {
+    "TrainingPhrases": ["Hi", "Hello", "Hiya", "Hey there", "Hey", "Hello hi"],
+    "TrainingResponses": ["Hi! How's it going?", "Yellow there!"]
+  }
+}
