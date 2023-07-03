@@ -13,8 +13,10 @@ const def = "Sorry, I didn't understand. Can you please rephrase your question?"
 class Shrimpo {
 	constructor(defaults=def) {
 		this.defaults = defaults;
-    this.minimumMatch;
 		this.trainingData = {};
+
+    //requirements
+    this.minimumMatch;
 	}
 
 	train(intent, trainingPhrases, trainingResponses, requirements) {
