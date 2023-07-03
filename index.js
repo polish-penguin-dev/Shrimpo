@@ -21,7 +21,7 @@ class Shrimpo {
 		this.trainingData[intent] = {
 			trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
 			trainingResponses,
-       requirements
+      requirements
 		};
 
     this.minimumMatch = this.trainingData[intent].requirements.minimumMatchValue ? this.trainingData[intent].requirements.minimumMatchValue : 0.25;
