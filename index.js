@@ -3,8 +3,6 @@
   Make chatbots quickly, and easily. Uses Dice's coefficient to compare strings and categorizes them into specific intents (works similarly to Google's Dialogflow).
   Made by Aleksander Wegrzyn (@penguins184 discord).
   Class made by Paige (@paigeroid discord).
-
-  Contributions welcome!
 */
 
 
@@ -23,7 +21,7 @@ class Shrimpo {
 		this.trainingData[intent] = {
 			trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
 			trainingResponses,
-      requirements
+       requirements
 		};
 
     this.minimumMatch = this.trainingData[intent].requirements.minimumMatchValue ? this.trainingData[intent].requirements.minimumMatchValue : 0.25;
