@@ -13,6 +13,7 @@ const def = "Sorry, I didn't understand. Can you please rephrase your question?"
 class Shrimpo {
 	constructor(defaults=def) {
 		this.defaults = defaults;
+    this.minimumMatch;
 		this.trainingData = {};
 	}
 
@@ -22,15 +23,17 @@ class Shrimpo {
 			trainingResponses,
       requirements
 		};
+
+    this.minimumMatch = this.trainingData[intent].requirements.minimumMatchValue ? this.trainingData[intent].requirements.minimumMatchValue : 0.25;
 	}
 
 	ask(prompt) {
 		var promptLowercase = prompt.toLowerCase();
 		let closestMatch = null;
 		let highestScore = 0;
-    let minimumMatch = requirements.minimumMatchValue || 0.25;
 
 		for (const intent in this.trainingData) {
+      
 			const trainingPhrases = this.trainingData[intent].trainingPhrases;
 
 			const { bestMatch } = stringSimilarity.findBestMatch(promptLowercase, trainingPhrases);
@@ -42,7 +45,7 @@ class Shrimpo {
 		}
 
 		
-		if (closestMatch && highestScore >= minimumMatch) {
+		if (closestMatch && highestScore >= this.minimumMatch) {
 			const trainingResponses = this.trainingData[closestMatch].trainingResponses;
 			const randomResponse =
 			trainingResponses[Math.floor(Math.random() * trainingResponses.length)];
