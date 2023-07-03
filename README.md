@@ -42,6 +42,10 @@ console.log(ai.ask("Hi!"));
 
 This makes for an easy, and pretty good chatbot! But wait! We can do even more!
 
+## Requirements
+
+Obviously, we don't want our chatbot to accidentally flag something that doesn't really come under a certain intent. This is where requirements come in.
+
 ## Learning Mode
 
 Coming soon!

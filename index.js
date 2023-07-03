@@ -1,6 +1,6 @@
 /*
   Shrimpo🍤
-  Make chatbots quickly, and easily. Uses levenshtein distance to compare strings and categorizes them into specific intents (works similarly to Google's Dialogflow).
+  Make chatbots quickly, and easily. Uses Dice's coefficient to compare strings and categorizes them into specific intents (works similarly to Google's Dialogflow).
   Made by Aleksander Wegrzyn (@penguins184 discord).
   Class made by Paige (@paigeroid discord).
 */
@@ -16,10 +16,11 @@ class Shrimpo {
 		this.trainingData = {};
 	}
 
-	train(intent, trainingPhrases, trainingResponses) {
+	train(intent, trainingPhrases, trainingResponses, requirements) {
 		this.trainingData[intent] = {
 			trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
-			trainingResponses
+			trainingResponses,
+      requirements
 		};
 	}
 
@@ -27,6 +28,7 @@ class Shrimpo {
 		var promptLowercase = prompt.toLowerCase();
 		let closestMatch = null;
 		let highestScore = 0;
+    let minimumMatch = requirements.minimumMatchValue || 0.25;
 
 		for (const intent in this.trainingData) {
 			const trainingPhrases = this.trainingData[intent].trainingPhrases;
@@ -40,7 +42,7 @@ class Shrimpo {
 		}
 
 		
-		if (closestMatch) {
+		if (closestMatch && highestScore >= minimumMatch) {
 			const trainingResponses = this.trainingData[closestMatch].trainingResponses;
 			const randomResponse =
 			trainingResponses[Math.floor(Math.random() * trainingResponses.length)];
