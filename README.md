@@ -44,7 +44,26 @@ This makes for an easy, and pretty good chatbot! But wait! We can do even more!
 
 ## Requirements
 
-Obviously, we don't want our chatbot to accidentally flag something that doesn't really come under a certain intent. This is where requirements come in.
+Obviously, we don't want our chatbot to accidentally flag something that doesn't really come under a certain intent. This is where requirements come in. Here is a complete list:
+
+- minimumMatchValue
+  - Shrimpo uses Dice's coefficient to check how similar the prompt is to the training data. It returns a value between 0 - 1 with 0 being not matching at all to 1 being the same. With this value, you can set the minimum value required for a prompt to be flagged.
+
+E.g. 
+
+```js
+ai.train("Greetings", 
+  ["Hi", "Hello", "Hey"],
+  ["Hey! How are you?", "Hows it going?"],
+  { minimumMatchValue: 0.25 }
+);
+
+ai.train("Insults",
+  ["You're ugly", "You smell", "You suck"],
+  ["No you", "I don't care"],
+  { minimumMatchValue: 0.5 }
+);
+```
 
 ## Learning Mode
 
