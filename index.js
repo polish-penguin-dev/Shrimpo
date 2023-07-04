@@ -9,59 +9,48 @@
 const stringSimilarity = require("string-similarity");
 const def = "Sorry, I didn't understand. Can you please rephrase your question?";
 
-
 class Shrimpo {
-	constructor(defaults=def) {
-		this.defaults = defaults;
-		this.trainingData = {};
+  constructor(defaults = def) {
+    this.defaults = defaults;
+    this.trainingData = {};
+  }
 
-    //requirements
-    this.minimumMatch;
-	}
+  train(intent, trainingPhrases, trainingResponses, requirements, minimumMatchValue) {
+    this.trainingData[intent] = {
+      trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
+      trainingResponses,
+      minimumMatchValue: minimumMatchValue ? minimumMatchValue : 0.25
+    };
+  }
 
-	train(intent, trainingPhrases, trainingResponses, requirements) {
-		this.trainingData[intent] = {
-			trainingPhrases: trainingPhrases.map(phrase => phrase.toLowerCase()),
-			trainingResponses,
-      requirements
-		};
+  ask(prompt) {
+    const promptLowercase = prompt.toLowerCase();
+    let closestMatch = null;
+    let highestScore = 0;
 
-    this.minimumMatch = this.trainingData[intent].requirements.minimumMatchValue ? this.trainingData[intent].requirements.minimumMatchValue : 0.25;
-	}
+    for (const intent in this.trainingData) {
+      const trainingPhrases = this.trainingData[intent].trainingPhrases;
 
-	ask(prompt) {
-		var promptLowercase = prompt.toLowerCase();
-		let closestMatch = null;
-		let highestScore = 0;
+      const { bestMatch } = stringSimilarity.findBestMatch(promptLowercase, trainingPhrases);
 
-		for (const intent in this.trainingData) {
-      
-			const trainingPhrases = this.trainingData[intent].trainingPhrases;
+      if (bestMatch.rating > highestScore) {
+        highestScore = bestMatch.rating;
+        closestMatch = intent;
+      }
+    }
 
-			const { bestMatch } = stringSimilarity.findBestMatch(promptLowercase, trainingPhrases);
+    if (closestMatch && highestScore >= this.trainingData[closestMatch].minimumMatchValue) {
+      const trainingResponses = this.trainingData[closestMatch].trainingResponses;
+      const randomResponse = trainingResponses[Math.floor(Math.random() * trainingResponses.length)];
+      return randomResponse;
+    }
 
-			if (bestMatch.rating > highestScore) {
-				highestScore = bestMatch.rating;
-				closestMatch = intent;
-			}
-		}
-
-		
-		if (closestMatch && highestScore >= this.minimumMatch) {
-			const trainingResponses = this.trainingData[closestMatch].trainingResponses;
-			const randomResponse =
-			trainingResponses[Math.floor(Math.random() * trainingResponses.length)];
-			return randomResponse;
-		}
-
-		
-		if (Array.isArray(this.defaults)) {
-			return this.defaults[Math.floor(Math.random() * this.defaults.length)];
-		} else {
-			return this.defaults;
-		}
-	}
+    if (Array.isArray(this.defaults)) {
+      return this.defaults[Math.floor(Math.random() * this.defaults.length)];
+    } else {
+      return this.defaults;
+    }
+  }
 }
-
 
 module.exports = Shrimpo;
