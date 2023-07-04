@@ -1,6 +1,6 @@
 {
   "name": "shrimpo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shrimpo - Easily make AI chatbots. Powered by NLU. ",
   "main": "index.js",
   "scripts": {
