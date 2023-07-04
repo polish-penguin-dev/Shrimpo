@@ -7,6 +7,7 @@
 
 
 const stringSimilarity = require("string-similarity");
+const fs = require("fs");
 const def = "Sorry, I didn't understand. Can you please rephrase your question?";
 
 class Shrimpo {
@@ -50,6 +51,12 @@ class Shrimpo {
     } else {
       return this.defaults;
     }
+  }
+
+  dataset(path) {
+    const dataset = JSON.parse(fs.readFileSync(path, "utf8"));
+
+    this.trainingData = dataset;
   }
 }
 
