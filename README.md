@@ -1,6 +1,6 @@
 # Shrimpo🍤
 
-Shrimpo makes creating AI easy! It uses keywords similar to those in Google's DialogFlow and is a good alternative. To make your first chatbot, follow these 3 steps:
+Shrimpo makes creating AI easy! It uses keywords similar to those in Google"s DialogFlow and is a good alternative. To make your first chatbot, follow these 3 steps:
 
 ## 1. Train
 
@@ -24,12 +24,12 @@ ai.train("Insults",
 
 ## 2. Set a default phrase
 
-You can't train a chatbot everything, and when it is prompted with something that it has no match to, it'll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
+You can"t train a chatbot everything, and when it is prompted with something that it has no match to, it"ll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
 
 ```js
-ai.defaults = "I don't get what you mean";
+ai.defaults = "I don"t get what you mean";
 
-ai.defaults = ["Sorry, I don't know that one!", "Sorry, I don't know what you mean.", "I didnt quite catch that. Could you rephrase?"];
+ai.defaults = ["Sorry, I don't know that one!", "Sorry, I don't know what you mean.", "I didn't quite catch that. Could you rephrase?"];
 ```
 
 ## 3. Ask!
@@ -48,20 +48,20 @@ Shrimpo datasets look something like this:
 
 ```json
 {
-  Greetings: {
-    trainingPhrases: ['hi', 'hello', 'hey'],
-    trainingResponses: ['Hey! How are you?', "How's it going?"],
-    minimumMatchValue: 0.5
+  "Greetings": {
+    "trainingPhrases": ["hi", "hello", "hey"],
+    "trainingResponses": ["Hey! How are you?", "How"s it going?"],
+    "minimumMatchValue": 0.5
   },
-  Insults: {
-    trainingPhrases: ['you suck', 'you smell'],
-    trainingResponses: ['No you', "I don't care"],
-    minimumMatchValue: 0.3
+  "Insults": {
+    "trainingPhrases": ["you suck", "you smell"],
+    "trainingResponses": ["No you", "I don"t care"],
+    "minimumMatchValue": 0.3
   },
-  Farewell: {
-    trainingPhrases: ['bye', 'see you later'],
-    trainingResponses: ['Goodbye!', 'Take care!'],
-    minimumMatchValue: 0.6
+  "Farewell": {
+    "trainingPhrases": ["bye", "see you later"],
+    "trainingResponses": ["Goodbye!", "Take care!"],
+    "minimumMatchValue": 0.6
   }
 }
 ```
@@ -70,8 +70,11 @@ with the ai.import() function you can import datasets locally. A Shrimpo-Standar
 
 ```js
 const path = require("path");
+
 ai.import(__dirname  + "/dataset.json");
+//OR
 ai.import("./dataset.json");
+//OR
 ai.import(path.json(__dirname + "/dataset.json"));
 ```
 
