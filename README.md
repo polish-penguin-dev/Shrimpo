@@ -42,29 +42,34 @@ console.log(ai.ask("Hi!"));
 
 This makes for an easy, and pretty good chatbot! But wait! We can do even more!
 
-## Requirements
+## Importing Shrimpo Datasets
 
-Obviously, we don't want our chatbot to accidentally flag something that doesn't really come under a certain intent. This is where requirements come in. Here is a complete list:
+Shrimpo datasets look something like this:
 
-- minimumMatchValue
-  - Shrimpo uses Dice's coefficient to check how similar the prompt is to the training data. It returns a value between 0 - 1 with 0 being not matching at all to 1 being the same. With this value, you can set the minimum value required for a prompt to be flagged.
-
-E.g. 
-
-```js
-ai.train("Greetings", 
-  ["Hi", "Hello", "Hey"],
-  ["Hey! How are you?", "Hows it going?"],
-  { minimumMatchValue: 0.25 }
-);
-
-ai.train("Insults",
-  ["You're ugly", "You smell", "You suck"],
-  ["No you", "I don't care"],
-  { minimumMatchValue: 0.5 }
-);
+```json
+{
+  Greetings: {
+    trainingPhrases: ['hi', 'hello', 'hey'],
+    trainingResponses: ['Hey! How are you?', "How's it going?"],
+    minimumMatchValue: 0.5
+  },
+  Insults: {
+    trainingPhrases: ['you suck', 'you smell'],
+    trainingResponses: ['No you', "I don't care"],
+    minimumMatchValue: 0.3
+  },
+  Farewell: {
+    trainingPhrases: ['bye', 'see you later'],
+    trainingResponses: ['Goodbye!', 'Take care!'],
+    minimumMatchValue: 0.6
+  }
+}
 ```
+
+with the ai.dataset() function you can import datasets locally. A Shrimpo-Standard dataset is being heavily worked on at the moment and will soon be released to the public.
+
+Dataset method will be added soon.
 
 ## Learning Mode
 
-Coming soon!
+Coming soon! Requires dataset() so extra learning can be saved.
