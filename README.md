@@ -27,7 +27,7 @@ ai.train("Insults",
 You can't train a chatbot everything, and when it is prompted with something that it has no match to, it'll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
 
 ```js
-ai.defaults = "I don't get what you mean");
+ai.defaults = "I don't get what you mean";
 
 ai.defaults = ["Sorry, I don't know that one!", "Sorry, I don't know what you mean.", "I didnt quite catch that. Could you rephrase?"];
 ```
