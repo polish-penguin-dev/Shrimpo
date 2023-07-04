@@ -50,12 +50,12 @@ Shrimpo datasets look something like this:
 {
   "Greetings": {
     "trainingPhrases": ["hi", "hello", "hey"],
-    "trainingResponses": ["Hey! How are you?", "How"s it going?"],
+    "trainingResponses": ["Hey! How are you?", "How's it going?"],
     "minimumMatchValue": 0.5
   },
   "Insults": {
     "trainingPhrases": ["you suck", "you smell"],
-    "trainingResponses": ["No you", "I don"t care"],
+    "trainingResponses": ["No you", "I don't care"],
     "minimumMatchValue": 0.3
   },
   "Farewell": {
