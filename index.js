@@ -53,7 +53,7 @@ class Shrimpo {
     }
   }
 
-  dataset(path) {
+  import(path) {
     const dataset = JSON.parse(fs.readFileSync(path, "utf8"));
 
     this.trainingData = dataset;

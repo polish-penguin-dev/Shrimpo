@@ -66,10 +66,15 @@ Shrimpo datasets look something like this:
 }
 ```
 
-with the ai.dataset() function you can import datasets locally. A Shrimpo-Standard dataset is being heavily worked on at the moment and will soon be released to the public.
+with the ai.import() function you can import datasets locally. A Shrimpo-Standard dataset is being heavily worked on at the moment and will soon be released to the public. E.g.
 
-Dataset method will be added soon.
+```js
+const path = require("path");
+ai.import(__dirname  + "/dataset.json");
+ai.import("./dataset.json");
+ai.import(path.json(__dirname + "/dataset.json"));
+```
 
 ## Learning Mode
 
-Coming soon! Requires dataset() so extra learning can be saved.
+Coming soon! Requires import() so extra learning can be saved.
