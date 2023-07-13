@@ -75,7 +75,7 @@ ai.import(__dirname  + "/dataset.json");
 //OR
 ai.import("./dataset.json");
 //OR
-ai.import(path.json(__dirname + "/dataset.json"));
+ai.import(path.join(__dirname + "/dataset.json"));
 ```
 
 ## Learning Mode
