@@ -39,7 +39,7 @@ ai.train("Insults",
 
 ## 2. Set a default phrase
 
-You can"t train a chatbot everything, and when it is prompted with something that it has no match to, it"ll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
+You can"t train a chatbot everything, and when it is prompted with something that it has no match to, it'll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
 
 ```js
 ai.defaults = "I don't get what you mean";
