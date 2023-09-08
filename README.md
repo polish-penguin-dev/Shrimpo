@@ -19,7 +19,7 @@ npm i shrimpo
 Training the chatbot is simple. You need to make an intent, like a category, such as "Greetings", or "Insults". Then you must pass an array of training data - something that the chatbot can recognise as a greeting or insult. Then, finally, you can pass some training responses - what the chatbot will respond to those insults or greetings with. For example:
 
 ```js
-const Shrimpo = require("Shrimpo");
+const Shrimpo = require("shrimpo");
 let ai = new Shrimpo();
 
 
