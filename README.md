@@ -4,7 +4,7 @@
 <a href="https://www.npmjs.com/package/shrimpo"><img src="https://img.shields.io/npm/dt/shrimpo?style=flat&color=blue&logo=docusign&logoColor=white" alt="downloads" />
 <img src="https://github.com/polish-penguin-dev/Shrimpo/actions/workflows/publish.yml/badge.svg" alt="publish">
 
-Shrimpo makes creating AI easy! It uses keywords similar to those in Google"s DialogFlow and is a good alternative. To make your first chatbot, follow these 3 steps:
+Shrimpo makes creating AI easy! It uses keywords similar to those in Google's DialogFlow and is a good alternative. To make your first chatbot, follow these 3 steps:
 
 <br>
 
