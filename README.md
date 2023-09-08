@@ -37,10 +37,26 @@ ai.defaults = ["Sorry, I don't know that one!", "Sorry, I don't know what you me
 Now just simply ask it something!
 
 ```js
-console.log(ai.ask("Hi!"));
+console.log(ai.ask("Hi!").response);
 ```
 
 This makes for an easy, and pretty good chatbot! But wait! We can do even more!
+
+## Data Retrieval
+
+But, what if the user inputs some data? Maybe they want a latte? an espresso?
+
+```js
+ai.train("OrderDrink", ["I would like a <drink>"], ["Coming right up!"]);
+
+const response = ai.ask("I would like a latte");
+
+console.log(response.response);
+console.log(`Detected drink: ${response.data.drink}`); // "latte"
+
+```
+
+Just wrap something in <> whilst training the bot and then you can retrieve the data the user inputted in that place.
 
 ## Importing Shrimpo Datasets
 
