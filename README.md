@@ -14,13 +14,14 @@ Training the chatbot is simple. You need to make an intent, like a category, suc
 
 ```js
 const Shrimpo = require("Shrimpo");
-
 let ai = new Shrimpo();
+
 
 ai.train("Greetings", 
   ["Hi", "Hello", "Hey"],
   ["Hey! How are you?", "Hows it going?"]
 );
+
 
 ai.train("Insults",
   ["You're ugly", "You smell", "You suck"],
@@ -36,6 +37,7 @@ You can"t train a chatbot everything, and when it is prompted with something tha
 
 ```js
 ai.defaults = "I don't get what you mean";
+
 
 ai.defaults = [
   "Sorry, I don't know that one!",
@@ -69,11 +71,13 @@ Shrimpo datasets look something like this:
     "trainingResponses": ["Hey! How are you?", "How's it going?"],
     "minimumMatchValue": 0.5
   },
+
   "Insults": {
     "trainingPhrases": ["you suck", "you smell"],
     "trainingResponses": ["No you", "I don't care"],
     "minimumMatchValue": 0.3
   },
+
   "Farewell": {
     "trainingPhrases": ["bye", "see you later"],
     "trainingResponses": ["Goodbye!", "Take care!"],
@@ -88,9 +92,13 @@ with the ai.import() function you can import datasets locally. A Shrimpo-Standar
 const path = require("path");
 
 ai.import(__dirname  + "/dataset.json");
+
 //OR
+
 ai.import("./dataset.json");
+
 //OR
+
 ai.import(path.join(__dirname + "/dataset.json"));
 ```
 
