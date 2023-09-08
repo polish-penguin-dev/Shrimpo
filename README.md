@@ -1,6 +1,12 @@
 # Shrimpo🍤
 
+<a href="https://www.npmjs.com/package/shrimpo"><img src="https://img.shields.io/npm/v/shrimpo?style=flat&color=red&logo=npm&logoColor=white" alt="version" />
+<a href="https://www.npmjs.com/package/shrimpo"><img src="https://img.shields.io/npm/dt/shrimpo?style=flat&color=blue&logo=docusign&logoColor=white" alt="downloads" />
+<img src="https://github.com/polish-penguin-dev/Shrimpo/actions/workflows/publish.yml/badge.svg" alt="publish">
+
 Shrimpo makes creating AI easy! It uses keywords similar to those in Google"s DialogFlow and is a good alternative. To make your first chatbot, follow these 3 steps:
+
+<br>
 
 ## 1. Train
 
@@ -22,6 +28,8 @@ ai.train("Insults",
 );
 ```
 
+<br>
+
 ## 2. Set a default phrase
 
 You can"t train a chatbot everything, and when it is prompted with something that it has no match to, it"ll resort to using a default phrase. You can pass a singular string as this, or an array where one will be randomly picked. For example:
@@ -29,8 +37,14 @@ You can"t train a chatbot everything, and when it is prompted with something tha
 ```js
 ai.defaults = "I don't get what you mean";
 
-ai.defaults = ["Sorry, I don't know that one!", "Sorry, I don't know what you mean.", "I didn't quite catch that. Could you rephrase?"];
+ai.defaults = [
+  "Sorry, I don't know that one!",
+  "Sorry, I don't know what you mean.",
+  "I didn't quite catch that. Could you rephrase?"
+];
 ```
+
+<br>
 
 ## 3. Ask!
 
@@ -41,6 +55,8 @@ console.log(ai.ask("Hi!"));
 ```
 
 This makes for an easy, and pretty good chatbot! But wait! We can do even more!
+
+<br>
 
 ## Importing Shrimpo Datasets
 
